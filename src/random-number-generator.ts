@@ -1,5 +1,5 @@
 import { bindable, inject } from 'aurelia-framework';
-import { IJsonSchemaDefinition, FormInstances, IFormInstance, RulesFactory } from 'aurelia-json-schema-form';
+import { IJsonSchemaDefinition, FormInstances, IFormInstance, RulesFactory } from 'plugin/aurelia-json-schema-form';
 
 @inject(FormInstances)
 export class RandomNumberGenerator {
@@ -12,6 +12,7 @@ export class RandomNumberGenerator {
   constructor(private instances: FormInstances) { }
 
   bind() {
+    // tslint:disable-next-line:no-console
     console.log('random-number-generator', { schema: this.schema, model: this.model });
     this.formCtrl = this.instances.get(this.formInstance);
 

@@ -1,4 +1,4 @@
-import { IFormOverride } from '../../dist/commonjs/aurelia-json-schema-form';
+import { IFormOverride } from 'plugin/aurelia-json-schema-form';
 import { PLATFORM } from 'aurelia-pal';
 
 export const form: IFormOverride = {
@@ -80,9 +80,9 @@ export const form: IFormOverride = {
     ]
   },
   'termsOfService': {},
-  '_element': [{
-    elementName: 'random-number-generator',
-    schemaKey: 'random'
-  }],
+  // '_element': [{
+  //   elementName: 'random-number-generator',
+  //   schemaKey: 'random'
+  // }],
   '$noSeparator': true
 };

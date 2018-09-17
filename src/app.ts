@@ -79,6 +79,7 @@ export class App {
     if (results.valid) {
       window.alert('everything looks good!');
     } else {
+      // tslint:disable-next-line:max-line-length
       window.alert('one or more errors: \r\n' + results.results.filter((r) => !r.valid).map((r) => r.message).join('\r\n'));
     }
   }

@@ -1,4 +1,4 @@
-import { IJsonSchemaDefinition } from 'aurelia-json-schema-form';
+import { IJsonSchemaDefinition } from 'plugin/aurelia-json-schema-form';
 
 export const schema: IJsonSchemaDefinition = {
   type: 'object',
