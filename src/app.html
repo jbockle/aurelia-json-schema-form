@@ -1,0 +1,101 @@
+<template>
+  <require from="./navbar/navbar"></require>
+  <require from="./app.css"></require>
+  <require from="./random-number-generator"></require>
+  <div ref="styleDiv"></div>
+  <div class="d-flex flex-column h-100">
+    <navbar></navbar>
+    <div class="d-flex flex-row h-100 w-100">
+      <div class="d-flex flex-column h-100 w-25 pr-2">
+        <div class="d-flex flex-column flex-fill w-100 h-100 p-2">
+          <label for="schema">
+            Schema
+            <span class="text-danger"
+                  if.bind="schemaState"
+                  textcontent.bind="schemaState"></span>
+          </label>
+          <textarea id="schema"
+                    value.bind="schemaString"
+                    class="flex-fill border border-secondary no-resize"></textarea>
+        </div>
+        <div class="d-flex flex-column flex-fill w-100 h-100 p-2">
+          <label for="form">Form
+            <span class="text-danger"
+                  if.bind="formState"
+                  textcontent.bind="formState"></span>
+          </label>
+          <textarea id="form"
+                    value.bind="formString"
+                    class="flex-fill border border-secondary no-resize"></textarea>
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-fill w-25 h-100 p-2">
+        <div class="d-flex flex-column flex-fill h-50">
+          <label for="model">Model</label>
+          <textarea id="model"
+                    value.to-view="modelString"
+                    class="flex-fill border border-secondary no-resize"
+                    readonly></textarea>
+        </div>
+        <div class="p-2 border border-danger bg-danger text-light"
+             if.bind="schemaform.validationController.errors.length > 0">
+          <ul>
+            <li repeat.for="error of schemaform.validationController.errors & throttle">
+              ${error.message}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-fill h-100 pr-2 w-50">
+        <div class="border p-2 clearfix align-items-center bg-dark text-light">
+          <h4>Options</h4>
+          <form>
+            <div class="form-row">
+              <div class="col">
+                <div class="form-check">
+                  <input class="form-check-input"
+                         type="checkbox"
+                         checked.bind="options.validateOnRender"
+                         id="validateOnRender">
+                  <label class="form-check-label"
+                         for="validateOnRender">
+                    Validate on render
+                  </label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           checked.bind="options.noEmptyArrayInitialization"> Don't initialize arrays
+                  </label>
+                </div>
+              </div>
+              <div class="col-auto">
+                <button type="button"
+                        class="btn btn-primary btn-sm"
+                        click.trigger="reload()"
+                        if.bind="schemaform">Reload Form</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <hr>
+        <label>Form</label>
+        <form class="p-2 border border-warning h-100"
+              style="overflow-y:auto;overflow-x: hidden"
+              submit.delegate="submit($event)">
+          <au-json-schema-form schema.bind="schema"
+                               form.bind="form"
+                               model.two-way="model"
+                               options.bind="options"
+                               if.bind="formVisible"
+                               view-model.ref="schemaform"></au-json-schema-form>
+          <button type="submit"
+                  class="btn btn-primary float-right">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,18 @@
+
+button:disabled.close:hover,button:disabled.close:focus {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.form-control.custom-range {
+  border: none;
+}
+
+a.nav-link, .clickable {
+  cursor: pointer;
+}
+
+span.disabled {
+  color: var(--gray) !important;
+  cursor: not-allowed;
+}

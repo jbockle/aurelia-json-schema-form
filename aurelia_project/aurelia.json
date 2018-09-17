@@ -1,0 +1,99 @@
+{
+  "name": "aureliaPlugin",
+  "type": "project:application",
+  "bundler": {
+    "id": "webpack",
+    "displayName": "Webpack"
+  },
+  "build": {
+    "options": {
+      "server": "dev",
+      "extractCss": "prod",
+      "coverage": false
+    }
+  },
+  "plugin": {
+    "src": "src/plugin",
+    "output": "dist",
+    "outputs": {
+      "es2015": {
+        "settings": {
+          "module": "es2015",
+          "target": "es2015"
+        }
+      },
+      "commonjs": {
+        "settings": {
+          "module": "commonjs"
+        }
+      },
+      "amd": {
+        "settings": {
+          "module": "amd"
+        }
+      },
+      "system": {
+        "settings": {
+          "module": "system"
+        }
+      }
+    }
+  },
+  "platform": {
+    "id": "web",
+    "displayName": "Web",
+    "hmr": false,
+    "open": false,
+    "port": 8080,
+    "output": "dist-dev"
+  },
+  "loader": {
+    "id": "none",
+    "displayName": "None"
+  },
+  "transpiler": {
+    "id": "typescript",
+    "displayName": "TypeScript",
+    "fileExtension": ".ts"
+  },
+  "markupProcessor": {
+    "id": "none",
+    "displayName": "None",
+    "fileExtension": ".html"
+  },
+  "cssProcessor": {
+    "id": "sass",
+    "displayName": "Sass",
+    "fileExtension": ".scss"
+  },
+  "editor": {
+    "id": "vscode",
+    "displayName": "Visual Studio Code"
+  },
+  "unitTestRunners": [
+    {
+      "id": "karma",
+      "displayName": "Karma"
+    },
+    {
+      "id": "jest",
+      "displayName": "Jest"
+    }
+  ],
+  "integrationTestRunner": {
+    "id": "protractor",
+    "displayName": "Protractor"
+  },
+  "paths": {
+    "root": "src",
+    "resources": "resources",
+    "elements": "resources/elements",
+    "attributes": "resources/attributes",
+    "valueConverters": "resources/value-converters",
+    "bindingBehaviors": "resources/binding-behaviors"
+  },
+  "testFramework": {
+    "id": "jasmine",
+    "displayName": "Jasmine"
+  }
+}

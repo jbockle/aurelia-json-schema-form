@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "tslint:recommended"
+  ],
+  "rules": {
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "member-access": false,
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-leading-underscore"
+    ],
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "trailing-comma": false,
+    "member-ordering": false,
+    "object-literal-shorthand": false,
+    "file-name-casing": [
+      true,
+      "kebab-case"
+    ],
+    "no-bitwise": false,
+    "arrow-parens": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "node_modules"
+    ]
+  }
+}
