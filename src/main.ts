@@ -26,9 +26,9 @@ export function configure(aurelia: Aurelia) {
     .plugin(PLATFORM.moduleName('plugin/aurelia-json-schema-form'), (options: PluginOptions) => {
       // options.logLevel = logLevel.debug;
     });
-    // .globalResources([
-    //   PLATFORM.moduleName('./random-number-generator')
-    // ]);
+  // .globalResources([
+  //   PLATFORM.moduleName('./random-number-generator')
+  // ]);
 
   // Uncomment the line below to enable animation.
   // aurelia.use.plugin(PLATFORM.moduleName('aurelia-animator-css'));
@@ -45,5 +45,5 @@ export function configure(aurelia: Aurelia) {
     aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
   }
 
-  aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
+  aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app'), 'main'));
 }
