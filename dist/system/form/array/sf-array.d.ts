@@ -1,5 +1,4 @@
 import { InlineViewStrategy } from 'aurelia-framework';
-import { SchemaFormConfiguration } from '../../services/schema-form-configuration';
 import { SchemaFormLogger } from '../../resources/logger';
 import { IFormOverride } from '../../interfaces/form-override';
 import { FormService } from '../../services/form-service';
@@ -9,7 +8,6 @@ import { DefaultsService } from '../../services/defaults-service';
 import { FormInstances } from '../../services/form-instances';
 export declare class SfArray {
     arrayRules: ArrayRules;
-    configuration: SchemaFormConfiguration;
     private formService;
     private logger;
     private defaultsService;
@@ -26,7 +24,7 @@ export declare class SfArray {
     errors: ValidateResult[];
     binded: boolean;
     private formCtrl;
-    constructor(arrayRules: ArrayRules, configuration: SchemaFormConfiguration, formService: FormService, logger: SchemaFormLogger, defaultsService: DefaultsService, formInstances: FormInstances);
+    constructor(arrayRules: ArrayRules, formService: FormService, logger: SchemaFormLogger, defaultsService: DefaultsService, formInstances: FormInstances);
     bind(): Promise<void>;
     initializeArray(): Promise<void>;
     attached(): void;

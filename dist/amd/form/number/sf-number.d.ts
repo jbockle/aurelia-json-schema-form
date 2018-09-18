@@ -1,10 +1,10 @@
-import { SchemaFormConfiguration } from '../../services/schema-form-configuration';
 import { RulesFactory } from '../../rules/rules-factory';
 import { SchemaFormLogger } from '../../resources/logger';
 import { IFormOverride } from '../../interfaces/form-override';
 import { FormInstances } from '../../services/form-instances';
+import { FormService } from '../../services/form-service';
 export declare class SfNumber {
-    configuration: SchemaFormConfiguration;
+    formService: FormService;
     rules: RulesFactory;
     private logger;
     private formInstances;
@@ -15,7 +15,7 @@ export declare class SfNumber {
     view: any;
     kind: string;
     private formCtrl;
-    constructor(configuration: SchemaFormConfiguration, rules: RulesFactory, logger: SchemaFormLogger, formInstances: FormInstances);
+    constructor(formService: FormService, rules: RulesFactory, logger: SchemaFormLogger, formInstances: FormInstances);
     modelChanged(newValue: any, oldValue: any): void;
     attached(): void;
     bind(): void;

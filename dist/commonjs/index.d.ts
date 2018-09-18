@@ -30,8 +30,6 @@ export * from './services/defaults-service';
 export * from './services/form-instances';
 export * from './services/form-service';
 export * from './services/schema-form-configuration';
-export * from './templates/bootstrap4/bootstrap-tooltip';
-export * from './templates/bootstrap4/index';
 export * from './value-converters/sf-number-value-converter';
 export * from './plugin-options';
-//# sourceMappingURL=aurelia-json-schema-form.d.ts.map
+//# sourceMappingURL=index.d.ts.map

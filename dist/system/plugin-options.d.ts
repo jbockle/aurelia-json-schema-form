@@ -1,6 +1,6 @@
 import { ValidationRenderer } from 'aurelia-validation';
-import { IValidationMessages } from './aurelia-json-schema-form';
 import { ITemplates } from './interfaces/templates';
+import { IValidationMessages } from './interfaces/validation-messages';
 export declare class PluginOptions {
     /**
      * @property modifies DOM to display error/success states

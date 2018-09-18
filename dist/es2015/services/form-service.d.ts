@@ -4,11 +4,13 @@ import { SchemaFormLogger } from '../resources/logger';
 import { ITemplateStore } from '../interfaces/template';
 import { DefaultsService } from './defaults-service';
 import { TaskQueue } from 'aurelia-framework';
+import { SchemaFormConfiguration } from './schema-form-configuration';
 export declare class FormService {
     defaultsService: DefaultsService;
     taskQueue: TaskQueue;
     private logger;
-    constructor(defaultsService: DefaultsService, taskQueue: TaskQueue, logger: SchemaFormLogger);
+    configuration: SchemaFormConfiguration;
+    constructor(defaultsService: DefaultsService, taskQueue: TaskQueue, logger: SchemaFormLogger, configuration: SchemaFormConfiguration);
     getFormTemplateAsync(form: IFormOverride, schema: IJsonSchemaDefinition, model: any, instanceId: string): Promise<ITemplateStore>;
     generateTemplate(form: IFormOverride, schema: IJsonSchemaDefinition, template: ITemplateStore, instanceId: string, segment?: string): void;
     private appendContainer;
@@ -16,5 +18,6 @@ export declare class FormService {
     appendTemplateElement(template: ITemplateStore, templateModule: ITemplateElement, parentSchema: IJsonSchemaDefinition, segment: string, instanceId: string): void;
     getSfTemplate(modelPath: string, formPath: string, schemaType: SchemaType, instanceId: string): string;
     private getFormKeySchema;
+    getTemplatePath(type: string, child?: string): any;
 }
 //# sourceMappingURL=form-service.d.ts.map
