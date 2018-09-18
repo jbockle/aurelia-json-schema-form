@@ -1,7 +1,7 @@
 import { IRules } from '../interfaces/rules';
 import { inject } from 'aurelia-framework';
 import { SchemaFormConfiguration } from '../services/schema-form-configuration';
-import { ValidationRules, validationMessages, FluentRuleCustomizer, PropertyAccessorParser } from 'aurelia-validation';
+import { ValidationRules, validationMessages, FluentRuleCustomizer } from 'aurelia-validation';
 
 @inject(SchemaFormConfiguration)
 export class CommonRules implements IRules {
@@ -22,7 +22,7 @@ export class CommonRules implements IRules {
     ValidationRules
       .customRule(
         'enum',
-        (val, obj, allowedValues: any[]) => val !== undefined ? allowedValues.indexOf(val) >= 0 : true,
+        (val, _obj, allowedValues: any[]) => val !== undefined ? allowedValues.indexOf(val) >= 0 : true,
         this.configuration.messages.enum || '${$displayName} has an invalid selection.',
         (allowedValues) => ({ allowedValues })
       );

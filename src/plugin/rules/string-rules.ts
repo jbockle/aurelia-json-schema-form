@@ -62,7 +62,7 @@ export class StringRules {
     ValidationRules
       .customRule(
         'format_ipv6',
-        (val: string) => !!val ? ipv4.test(val) : true,
+        (val: string) => !!val ? ipv6.test(val) : true,
         this.configuration.messages.format_ipv6 || '${$displayName} is not a valid IPv6 address.'
       );
 
@@ -71,7 +71,7 @@ export class StringRules {
     ValidationRules
       .customRule(
         'format_hostname',
-        (val: string) => !!val ? ipv4.test(val) : true,
+        (val: string) => !!val ? hostname.test(val) : true,
         this.configuration.messages.format_hostname || '${$displayName} is not a valid hostname.'
       );
 
@@ -88,7 +88,7 @@ export class StringRules {
     ValidationRules
       .customRule(
         'pattern',
-        (val, obj, pattern) => !!val ? (new RegExp(pattern)).test(val) : true,
+        (val, _obj, pattern) => !!val ? (new RegExp(pattern)).test(val) : true,
         this.configuration.messages.pattern || '${$displayName} is not correctly formatted.',
         (pattern) => ({ pattern })
       );

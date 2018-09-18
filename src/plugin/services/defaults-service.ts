@@ -2,7 +2,6 @@ import { inject } from 'aurelia-framework';
 import { SchemaFormLogger } from '../resources/logger';
 import {
   IJsonSchemaObjectDefinition,
-  IJsonSchemaArrayDefinition,
   IJsonSchemaDefinition
 } from '../interfaces/json-schema-definition';
 
@@ -15,7 +14,7 @@ export class DefaultsService {
     this.logger.info('getSchemaDefaultAsync', { schema, model });
     switch (schema.type) {
       case 'array':
-        model = await this.getArrayDefaultAsync(model, schema.items);
+        model = await this.getArrayDefaultAsync(model);
       case 'object':
         model = await this.getObjectDefaultAsync(model, (schema as IJsonSchemaObjectDefinition));
       default:
@@ -32,7 +31,7 @@ export class DefaultsService {
     return model || schema.const || schema.default || value;
   }
 
-  async getArrayDefaultAsync(model: any, schema: IJsonSchemaArrayDefinition): Promise<any[]> {
+  async getArrayDefaultAsync(model: any): Promise<any[]> {
     return model || [];
   }
 

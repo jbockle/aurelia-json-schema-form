@@ -1,4 +1,3 @@
-import { valueConverter } from 'aurelia-binding';
 
 export class SfNumberValueConverter {
   toView(val) {

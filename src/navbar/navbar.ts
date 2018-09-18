@@ -1,4 +1,4 @@
-import { bindable, DOM } from 'aurelia-framework';
+import { DOM } from 'aurelia-framework';
 
 export class Navbar {
   themes = [

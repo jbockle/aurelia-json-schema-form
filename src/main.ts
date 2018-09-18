@@ -1,13 +1,10 @@
-import { AureliaValidationConfiguration } from 'aurelia-validation';
-import { PluginOptions } from 'plugin/aurelia-json-schema-form';
+import { PluginOptions } from './plugin/aurelia-json-schema-form';
 import { ConsoleAppender } from 'aurelia-logging-console';
 import { Aurelia, LogManager } from 'aurelia-framework';
-import { logLevel } from 'aurelia-logging';
 import { PLATFORM } from 'aurelia-pal';
 import environment from './environment';
 import 'bootstrap';
-import * as $ from 'jquery';
-import * as bluebird from 'bluebird';
+import { logLevel } from 'aurelia-logging';
 
 (Promise as any).config({
   longStackTraces: false,  // <----- I added this.
@@ -24,7 +21,7 @@ export function configure(aurelia: Aurelia) {
   LogManager.addAppender(new ConsoleAppender());
   aurelia.use
     .plugin(PLATFORM.moduleName('plugin/aurelia-json-schema-form'), (options: PluginOptions) => {
-      // options.logLevel = logLevel.debug;
+      options.logLevel = logLevel.debug;
     });
   // .globalResources([
   //   PLATFORM.moduleName('./random-number-generator')

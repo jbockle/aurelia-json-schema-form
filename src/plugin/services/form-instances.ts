@@ -1,8 +1,5 @@
 import { singleton, inject } from 'aurelia-framework';
 import { IFormInstance } from '../interfaces/form-instance';
-import { IJsonSchemaDefinition } from '../interfaces/json-schema-definition';
-import { IFormOverride } from '../interfaces/form-override';
-import { FormController } from '../form/form-controller';
 import { SchemaFormLogger } from '../resources/logger';
 
 @singleton()

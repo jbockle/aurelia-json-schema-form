@@ -1,12 +1,14 @@
-import { BindingSignaler } from 'aurelia-templating-resources';
-import { observable, inject, useShadowDOM, BindingEngine } from 'aurelia-framework';
-import { IFormOptions, IJsonSchemaDefinition, IFormOverride, AuJsonSchemaForm } from 'plugin/aurelia-json-schema-form';
+import { observable, useShadowDOM } from 'aurelia-framework';
+import {
+  IFormOptions,
+  IJsonSchemaDefinition,
+  IFormOverride,
+  AuJsonSchemaForm
+} from './plugin/aurelia-json-schema-form';
 import { form } from './json-form';
 import { schema } from './json-schema';
-import { ValidateEvent, ControllerValidateResult } from 'aurelia-validation';
 
 @useShadowDOM()
-@inject(BindingSignaler, BindingEngine)
 export class App {
   form: IFormOverride = form;
 
@@ -38,11 +40,9 @@ export class App {
     averageDailyCoffeeConsumption: 1
   };
 
-  constructor(private signaler: BindingSignaler, private engine: BindingEngine) { }
-
   attached() {
     this.refreshModel();
-    this.schemaform.validationController.subscribe((event: ValidateEvent) => {
+    this.schemaform.validationController.subscribe(() => {
       this.refreshModel();
     });
   }

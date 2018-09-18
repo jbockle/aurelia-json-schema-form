@@ -1,7 +1,6 @@
 import { SchemaFormLogger } from '../resources/logger';
 import { IFormOptions } from '../interfaces/form-options';
-import { ValidationController, ValidateEvent } from 'aurelia-validation';
-import { IJsonSchemaDefinition } from '../interfaces/json-schema-definition';
+import { ValidationController } from 'aurelia-validation';
 import { IFormOverride } from '../interfaces/form-override';
 
 export class FormController {

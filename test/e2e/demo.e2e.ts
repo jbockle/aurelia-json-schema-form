@@ -1,9 +1,9 @@
-import {PageObject_Welcome} from './welcome.po';
-import {PageObject_Skeleton} from './skeleton.po';
-import {browser, element, by, By, $, $$, ExpectedConditions} from 'aurelia-protractor-plugin/protractor';
-import {config} from '../protractor.conf';
+import { PageObject_Welcome } from './welcome.po';
+import { PageObject_Skeleton } from './skeleton.po';
+import { browser } from 'aurelia-protractor-plugin/protractor';
+import { config } from '../protractor.conf';
 
-describe('aurelia skeleton app', function() {
+describe('aurelia skeleton app', () => {
   let poWelcome: PageObject_Welcome;
   let poSkeleton: PageObject_Skeleton;
 

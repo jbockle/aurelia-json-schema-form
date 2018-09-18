@@ -1,5 +1,4 @@
-import { IFormOverride } from 'plugin/aurelia-json-schema-form';
-import { PLATFORM } from 'aurelia-pal';
+import { IFormOverride } from './plugin/aurelia-json-schema-form';
 
 export const form: IFormOverride = {
   '@div.row': [

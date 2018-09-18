@@ -1,5 +1,5 @@
 import { ValidationControllerFactory, ValidationController } from 'aurelia-validation';
-import { inject, bindable, InlineViewStrategy, customElement, Container, bindingMode } from 'aurelia-framework';
+import { inject, bindable, InlineViewStrategy, customElement, bindingMode } from 'aurelia-framework';
 import { SchemaFormConfiguration } from '../services/schema-form-configuration';
 import { IFormOptions } from '../interfaces/form-options';
 import { SchemaFormLogger } from '../resources/logger';

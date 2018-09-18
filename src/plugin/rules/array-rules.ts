@@ -1,11 +1,7 @@
-import { ValidationRules, FluentRuleCustomizer } from 'aurelia-validation';
-import { inject } from 'aurelia-framework';
-import { SchemaFormConfiguration } from '../services/schema-form-configuration';
+import { ValidationRules } from 'aurelia-validation';
 import { SfArray } from '../form/array/sf-array';
 
-@inject(SchemaFormConfiguration)
 export class ArrayRules {
-  constructor(private configuration: SchemaFormConfiguration) { }
 
   register() {
     this.add();
