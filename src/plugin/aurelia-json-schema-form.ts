@@ -77,7 +77,7 @@ function configure(frameworkConfig: FrameworkConfiguration, callback?: (config: 
 
   frameworkConfig.globalResources([
     PLATFORM.moduleName('./form/au-json-schema-form'),
-    PLATFORM.moduleName('./value-converters/number-value-converter'),
+    PLATFORM.moduleName('./value-converters/sf-number-value-converter'),
 
     PLATFORM.moduleName('./form/array/sf-array'),
     PLATFORM.moduleName('./form/object/sf-object'),
