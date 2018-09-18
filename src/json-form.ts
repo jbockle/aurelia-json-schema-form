@@ -79,9 +79,9 @@ export const form: IFormOverride = {
     ]
   },
   'termsOfService': {},
-  // '_element': [{
-  //   elementName: 'random-number-generator',
-  //   schemaKey: 'random'
-  // }],
+  '_element': [{
+    elementName: 'random-number-generator',
+    schemaKey: 'random'
+  }],
   '$noSeparator': true
 };

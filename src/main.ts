@@ -17,7 +17,10 @@ export function configure(aurelia: Aurelia) {
     .plugin(PLATFORM.moduleName('aurelia-validation'))
     .feature(PLATFORM.moduleName('plugin/index'), (options) => {
       options.logLevel = logLevel.debug;
-    });
+    })
+    .globalResources([
+      PLATFORM.moduleName('random-number-generator')
+    ]);
 
   // Uncomment the line below to enable animation.
   // aurelia.use.plugin(PLATFORM.moduleName('aurelia-animator-css'));
