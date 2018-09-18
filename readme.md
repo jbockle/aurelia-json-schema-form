@@ -13,12 +13,11 @@ to view a demo, clone and checkout the **sample/readme.md**
     - `npm install bootstrap jquery popper.js` (only required if you are using the built-in templates)
 - reference the plugin in your aurelia bootstrapper entry point `main.ts/js`
   - `aurelia.use.plugin(PLATFORM.moduleName("aurelia-json-schema-form")`
-  - customize the plugin by specifying `PluginOptions` configution function
+  - customize the plugin by specifying `PluginOptions` configuration function
     - change the validation renderer
     - change templates
     - change validation messages
     - change log level
-- create your schema and form (see **sample/readme.md** for an example, more documentation to follow later)
 - add an `<au-json-schema-form/>` element:
   - Schema declaration:
     ```json
@@ -110,6 +109,13 @@ to view a demo, clone and checkout the **sample/readme.md**
         }
       }
       ```
+
+## Running the sample
+
+1. install aurelia cli globally `npm i -g aurelia-cli`
+2. clone repo and run `npm install`
+3. run `au run`
+4. open browser to http://localhost:8080
 
 ## Coming soon/Need help with..
 
