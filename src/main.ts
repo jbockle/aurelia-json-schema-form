@@ -1,13 +1,11 @@
-import { PluginOptions } from './plugin/aurelia-json-schema-form';
-import { ConsoleAppender } from 'aurelia-logging-console';
-import { Aurelia, LogManager } from 'aurelia-framework';
+import { Aurelia } from 'aurelia-framework';
 import { PLATFORM } from 'aurelia-pal';
 import environment from './environment';
 import 'bootstrap';
 import { logLevel } from 'aurelia-logging';
 
 (Promise as any).config({
-  longStackTraces: false,  // <----- I added this.
+  longStackTraces: false,
   warnings: {
     wForgottenReturn: false
   }
@@ -16,16 +14,10 @@ import { logLevel } from 'aurelia-logging';
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
-    .plugin(PLATFORM.moduleName('aurelia-validation'));
-
-  LogManager.addAppender(new ConsoleAppender());
-  aurelia.use
-    .plugin(PLATFORM.moduleName('plugin/aurelia-json-schema-form'), (options: PluginOptions) => {
+    .plugin(PLATFORM.moduleName('aurelia-validation'))
+    .feature(PLATFORM.moduleName('plugin/index'), (options) => {
       options.logLevel = logLevel.debug;
     });
-  // .globalResources([
-  //   PLATFORM.moduleName('./random-number-generator')
-  // ]);
 
   // Uncomment the line below to enable animation.
   // aurelia.use.plugin(PLATFORM.moduleName('aurelia-animator-css'));
@@ -42,5 +34,5 @@ export function configure(aurelia: Aurelia) {
     aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
   }
 
-  aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app'), 'main'));
+  aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
 }

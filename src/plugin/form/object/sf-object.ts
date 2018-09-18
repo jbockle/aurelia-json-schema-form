@@ -1,12 +1,10 @@
 import { customElement, bindable, inject, InlineViewStrategy } from 'aurelia-framework';
 import { Guid } from '../../resources/guid';
-import { SchemaFormConfiguration } from '../../services/schema-form-configuration';
 import { SchemaFormLogger } from '../../resources/logger';
 import { IFormOverride } from '../../interfaces/form-override';
 import { FormService } from '../../services/form-service';
 
 @inject(
-  SchemaFormConfiguration,
   FormService,
   SchemaFormLogger
 )
@@ -23,7 +21,6 @@ export class SfObject {
   view: InlineViewStrategy;
 
   constructor(
-    public configuration: SchemaFormConfiguration,
     public formService: FormService,
     private logger: SchemaFormLogger
   ) { }

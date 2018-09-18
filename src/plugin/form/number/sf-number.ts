@@ -1,15 +1,15 @@
 import { bindable, customElement, inject } from 'aurelia-framework';
 import { Guid } from '../../resources/guid';
-import { SchemaFormConfiguration } from '../../services/schema-form-configuration';
 import { RulesFactory } from '../../rules/rules-factory';
 import { IJsonSchemaNumberDefinition } from '../../interfaces/json-schema-definition';
 import { SchemaFormLogger } from '../../resources/logger';
 import { IFormOverride } from '../../interfaces/form-override';
 import { FormInstances } from '../../services/form-instances';
 import { IFormInstance } from '../../interfaces/form-instance';
+import { FormService } from '../../services/form-service';
 
 @inject(
-  SchemaFormConfiguration,
+  FormService,
   RulesFactory,
   SchemaFormLogger,
   FormInstances
@@ -29,7 +29,7 @@ export class SfNumber {
   private formCtrl: IFormInstance;
 
   constructor(
-    public configuration: SchemaFormConfiguration,
+    public formService: FormService,
     public rules: RulesFactory,
     private logger: SchemaFormLogger,
     private formInstances: FormInstances
@@ -58,11 +58,11 @@ export class SfNumber {
   }
 
   determineViewStrategy() {
-    this.view = this.configuration.templates.number;
+    this.view = this.formService.getTemplatePath('number');
     if (this.form.$altTemplate) {
       this.view = this.form.$altTemplate;
     } else if (this.minimum !== undefined && this.maximum !== undefined) {
-      this.view = this.configuration.templates.numberRange;
+      this.view = this.formService.getTemplatePath('numberRange');
     }
   }
 

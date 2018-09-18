@@ -1,8 +1,8 @@
 import { ValidationRenderer } from 'aurelia-validation';
-import { BootstrapValidationRenderer, IValidationMessages } from './aurelia-json-schema-form';
 import { ITemplates } from './interfaces/templates';
-import { LogManager } from 'aurelia-framework';
-import { GetBootstrapTemplates } from './templates/bootstrap4';
+import { LogManager, PLATFORM } from 'aurelia-framework';
+import { BootstrapValidationRenderer } from './renderers/bootstrap-validation-renderer';
+import { IValidationMessages } from './interfaces/validation-messages';
 
 export class PluginOptions {
   /**
@@ -30,6 +30,17 @@ export class PluginOptions {
   logLevel: number = LogManager.logLevel.none;
 
   constructor() {
-    this.templates = GetBootstrapTemplates();
+    this.templates = {
+      boolean: PLATFORM.moduleName('./templates/bootstrap4/inputs/sft-boolean.html'),
+      number: PLATFORM.moduleName('./templates/bootstrap4/inputs/sft-number.html'),
+      numberRange: PLATFORM.moduleName('./templates/bootstrap4/inputs/sft-number-range.html'),
+      string: PLATFORM.moduleName('./templates/bootstrap4/inputs/sft-string.html'),
+      stringRadioEnum: PLATFORM.moduleName('./templates/bootstrap4/inputs/sft-string-radio-enum.html'),
+      stringSelectEnum: PLATFORM.moduleName('./templates/bootstrap4/inputs/sft-string-select-enum.html'),
+      object: PLATFORM.moduleName('./templates/bootstrap4/inputs/sft-object.html'),
+      array: PLATFORM.moduleName('./templates/bootstrap4/inputs/sft-array.html'),
+      arrayTabs: PLATFORM.moduleName('./templates/bootstrap4/inputs/sft-array-tabs.html'),
+      arrayStringEnum: PLATFORM.moduleName('./templates/bootstrap4/inputs/sft-array-string-enum.html')
+    };
   }
 }

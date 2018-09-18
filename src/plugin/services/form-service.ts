@@ -14,13 +14,15 @@ import { ITemplateStore } from '../interfaces/template';
 import { DefaultsService } from './defaults-service';
 import { Wrapper } from '../resources/wrapper';
 import { inject, TaskQueue } from 'aurelia-framework';
+import { SchemaFormConfiguration } from './schema-form-configuration';
 
-@inject(DefaultsService, TaskQueue, SchemaFormLogger)
+@inject(DefaultsService, TaskQueue, SchemaFormLogger, SchemaFormConfiguration)
 export class FormService {
   constructor(
     public defaultsService: DefaultsService,
     public taskQueue: TaskQueue,
-    private logger: SchemaFormLogger
+    private logger: SchemaFormLogger,
+    public configuration: SchemaFormConfiguration
   ) { }
 
   async getFormTemplateAsync(
@@ -141,5 +143,13 @@ export class FormService {
     } else if (schema.type === 'array') {
       return schema.items[formKey] as IJsonSchemaDefinition;
     }
+  }
+
+  getTemplatePath(type: string, child?: string) {
+    let templates = this.configuration.templates;
+    if (child) {
+      templates = templates[child];
+    }
+    return templates[type].replace('./', '../../');
   }
 }

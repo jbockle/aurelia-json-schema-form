@@ -1,5 +1,5 @@
-// import { FluentRuleCustomizer } from 'aurelia-validation';
-// import { SfBoolean } from '../form/boolean/sf-boolean';
+import { FluentRuleCustomizer } from 'aurelia-validation';
+import { SfBoolean } from '../form/boolean/sf-boolean';
 
 export class BooleanRules {
 
@@ -11,7 +11,7 @@ export class BooleanRules {
     // nothing specific to booleans
   }
 
-  // bind(ctrl: SfBoolean, rule: FluentRuleCustomizer<{}, any>) {
-  //   // nothing specific to booleans
-  // }
+  bind(_ctrl: SfBoolean, _rule: FluentRuleCustomizer<{}, any>) {
+    // nothing specific to booleans
+  }
 }

@@ -7,7 +7,6 @@ import { SchemaFormConfiguration } from './services/schema-form-configuration';
 import { PluginOptions } from './plugin-options';
 
 export function configure(frameworkConfig: FrameworkConfiguration, callback?: (config: PluginOptions) => void) {
-
   const logger = getLogger('aurelia-json-schema-form');
 
   logger.info('initializing aurelia-json-schema-form');
@@ -35,7 +34,6 @@ export function configure(frameworkConfig: FrameworkConfiguration, callback?: (c
     PLATFORM.moduleName('./form/boolean/sf-boolean'),
     PLATFORM.moduleName('./templates/bootstrap4/bootstrap-tooltip')
   ]);
-
 }
 
 function registerLogger(
@@ -92,7 +90,5 @@ export * from './services/defaults-service';
 export * from './services/form-instances';
 export * from './services/form-service';
 export * from './services/schema-form-configuration';
-export * from './templates/bootstrap4/bootstrap-tooltip';
-export * from './templates/bootstrap4/index';
 export * from './value-converters/sf-number-value-converter';
 export * from './plugin-options';

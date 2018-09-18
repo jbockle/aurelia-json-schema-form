@@ -10,6 +10,7 @@
     "sourceMap": true,
     "allowJs": false,
     "skipLibCheck": true,
+    "baseUrl": "src/plugin",
     "lib": [
       "es2017",
       "dom"

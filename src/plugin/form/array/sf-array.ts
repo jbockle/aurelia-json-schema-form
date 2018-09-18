@@ -1,6 +1,5 @@
 import { customElement, bindable, inject, InlineViewStrategy } from 'aurelia-framework';
 import { Guid } from '../../resources/guid';
-import { SchemaFormConfiguration } from '../../services/schema-form-configuration';
 import { SchemaFormLogger } from '../../resources/logger';
 import { IFormOverride } from '../../interfaces/form-override';
 import { FormService } from '../../services/form-service';
@@ -13,7 +12,6 @@ import * as $ from 'jquery';
 
 @inject(
   ArrayRules,
-  SchemaFormConfiguration,
   FormService,
   SchemaFormLogger,
   DefaultsService,
@@ -45,7 +43,6 @@ export class SfArray {
 
   constructor(
     public arrayRules: ArrayRules,
-    public configuration: SchemaFormConfiguration,
     private formService: FormService,
     private logger: SchemaFormLogger,
     private defaultsService: DefaultsService,
@@ -93,11 +90,11 @@ export class SfArray {
     } else if (this.form.$arrayAsTabs) {
       const content = !!this.form.$tabTitle ? `${this.form.$tabTitle}` : '${\'Item \' + ($index + 1)}';
       this.tabTitleTemplate = new InlineViewStrategy(`<template>${content}</template>`);
-      strategy = this.configuration.templates.arrayTabs;
+      strategy = this.formService.getTemplatePath('arrayTabs');
     } else if (this.form.$schema.items.type === 'string' && this.form.$schema.items.enum) {
-      strategy = this.configuration.templates.arrayStringEnum;
+      strategy = this.formService.getTemplatePath('arrayStringEnum');
     } else {
-      strategy = this.configuration.templates.array;
+      strategy = this.formService.getTemplatePath('array');
     }
     this.viewStrategy = strategy;
   }

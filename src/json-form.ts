@@ -1,4 +1,4 @@
-import { IFormOverride } from './plugin/aurelia-json-schema-form';
+import { IFormOverride } from './plugin';
 
 export const form: IFormOverride = {
   '@div.row': [
@@ -71,7 +71,7 @@ export const form: IFormOverride = {
         '@div.col-2': [
           {
             zip: {
-              $altTemplate: 'aurelia-json-schema-form/templates/bootstrap4/inputs/sft-number.html'
+              $altTemplate: '../../templates/bootstrap4/inputs/sft-number.html'
             }
           }
         ]

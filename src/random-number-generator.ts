@@ -1,5 +1,5 @@
 import { bindable, inject } from 'aurelia-framework';
-import { IJsonSchemaDefinition, FormInstances, IFormInstance } from 'plugin/aurelia-json-schema-form';
+import { IJsonSchemaDefinition, FormInstances, IFormInstance } from './plugin';
 
 @inject(FormInstances)
 export class RandomNumberGenerator {

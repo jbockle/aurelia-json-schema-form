@@ -24,7 +24,7 @@ const cssRules = [
   { loader: 'css-loader' },
 ];
 
-module.exports = ({production, server, extractCss, coverage, analyze, karma} = {}) => ({
+module.exports = ({ production, server, extractCss, coverage, analyze, karma } = {}) => ({
   resolve: {
     extensions: ['.ts', '.js'],
     modules: [srcDir, 'node_modules'],
@@ -59,8 +59,8 @@ module.exports = ({production, server, extractCss, coverage, analyze, karma} = {
         test: /\.css$/i,
         issuer: [{ not: [{ test: /\.html$/i }] }],
         use: extractCss ? [{
-            loader: MiniCssExtractPlugin.loader
-          },
+          loader: MiniCssExtractPlugin.loader
+        },
           'css-loader'
         ] : ['style-loader', ...cssRules]
       },
@@ -105,7 +105,7 @@ module.exports = ({production, server, extractCss, coverage, analyze, karma} = {
       'Promise': 'bluebird'
     }),
     new ModuleDependenciesPlugin({
-      'aurelia-testing': [ './compile-spy', './view-spy' ]
+      'aurelia-testing': ['./compile-spy', './view-spy']
     }),
     new HtmlWebpackPlugin({
       template: 'index.ejs',
@@ -114,6 +114,9 @@ module.exports = ({production, server, extractCss, coverage, analyze, karma} = {
         title, server, baseUrl
       }
     }),
+    new CopyWebpackPlugin([{
+      from: 'node_modules/bootswatch/dist/**/*.min.css', to: outDir + '/css/'
+    }]),
     ...when(extractCss, new MiniCssExtractPlugin({
       filename: production ? '[contenthash].css' : '[id].css',
       allChunks: true

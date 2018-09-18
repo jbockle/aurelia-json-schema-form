@@ -1,14 +1,13 @@
-import { observable, useShadowDOM } from 'aurelia-framework';
+import { observable } from 'aurelia-framework';
 import {
   IFormOptions,
   IJsonSchemaDefinition,
   IFormOverride,
   AuJsonSchemaForm
-} from './plugin/aurelia-json-schema-form';
+} from './plugin';
 import { form } from './json-form';
 import { schema } from './json-schema';
 
-@useShadowDOM()
 export class App {
   form: IFormOverride = form;
 

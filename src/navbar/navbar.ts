@@ -25,12 +25,12 @@ export class Navbar {
     'yeti'
   ];
 
-  current: string = 'minty';
+  current: string = 'darkly';
 
   themeSelected(theme) {
     this.current = theme;
     DOM
       .getElementById('linkStylesheet')
-      .setAttribute('href', `css/${theme}/bootstrap.min.css`);
+      .setAttribute('href', `css/node_modules/bootswatch/dist/${theme}/bootstrap.min.css`);
   }
 }
