@@ -9,10 +9,10 @@
     "sourceRoot": "src",
     "sourceMap": true,
     "allowJs": false,
-    "baseUrl": "src",
     "skipLibCheck": true,
     "lib": [
-      "es2017", "dom"
+      "es2017",
+      "dom"
     ]
   },
   "include": [
