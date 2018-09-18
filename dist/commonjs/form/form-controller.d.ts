@@ -1,7 +1,7 @@
-import { SchemaFormLogger } from "../resources/logger";
-import { IFormOptions } from "../interfaces/form-options";
-import { ValidationController } from "aurelia-validation";
-import { IFormOverride } from "../interfaces/form-override";
+import { SchemaFormLogger } from '../resources/logger';
+import { IFormOptions } from '../interfaces/form-options';
+import { ValidationController } from 'aurelia-validation';
+import { IFormOverride } from '../interfaces/form-override';
 export declare class FormController {
     private logger;
     options: IFormOptions;

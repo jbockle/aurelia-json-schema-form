@@ -12,7 +12,7 @@ export interface ITemplates {
     formats?: IFormatTemplates;
 }
 export interface IFormatTemplates {
-    "date-time"?: string;
+    'date-time'?: string;
     date?: string;
     time?: string;
 }

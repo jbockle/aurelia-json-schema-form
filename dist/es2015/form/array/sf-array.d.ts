@@ -1,12 +1,12 @@
-import { InlineViewStrategy } from "aurelia-framework";
-import { SchemaFormConfiguration } from "../../services/schema-form-configuration";
-import { SchemaFormLogger } from "../../resources/logger";
-import { IFormOverride } from "../../interfaces/form-override";
-import { FormService } from "../../services/form-service";
-import { ValidateResult } from "aurelia-validation";
-import { ArrayRules } from "../../rules/array-rules";
-import { DefaultsService } from "../../services/defaults-service";
-import { FormInstances } from "../../services/form-instances";
+import { InlineViewStrategy } from 'aurelia-framework';
+import { SchemaFormConfiguration } from '../../services/schema-form-configuration';
+import { SchemaFormLogger } from '../../resources/logger';
+import { IFormOverride } from '../../interfaces/form-override';
+import { FormService } from '../../services/form-service';
+import { ValidateResult } from 'aurelia-validation';
+import { ArrayRules } from '../../rules/array-rules';
+import { DefaultsService } from '../../services/defaults-service';
+import { FormInstances } from '../../services/form-instances';
 export declare class SfArray {
     arrayRules: ArrayRules;
     configuration: SchemaFormConfiguration;

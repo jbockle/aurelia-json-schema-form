@@ -1,9 +1,9 @@
-import { IFormOverride, ITemplateElement } from "../interfaces/form-override";
-import { IJsonSchemaDefinition, SchemaType } from "../interfaces/json-schema-definition";
-import { SchemaFormLogger } from "../resources/logger";
-import { ITemplateStore } from "../interfaces/template";
-import { DefaultsService } from "./defaults-service";
-import { TaskQueue } from "aurelia-framework";
+import { IFormOverride, ITemplateElement } from '../interfaces/form-override';
+import { IJsonSchemaDefinition, SchemaType } from '../interfaces/json-schema-definition';
+import { SchemaFormLogger } from '../resources/logger';
+import { ITemplateStore } from '../interfaces/template';
+import { DefaultsService } from './defaults-service';
+import { TaskQueue } from 'aurelia-framework';
 export declare class FormService {
     defaultsService: DefaultsService;
     taskQueue: TaskQueue;

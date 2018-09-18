@@ -1,5 +1,5 @@
-export declare type StringFormat = "date-time" | "date" | "time" | "ipv4" | "ipv6" | "email";
-export declare type SchemaType = "object" | "array" | "string" | "number" | "boolean";
+export declare type StringFormat = 'date-time' | 'date' | 'time' | 'ipv4' | 'ipv6' | 'email';
+export declare type SchemaType = 'object' | 'array' | 'string' | 'number' | 'boolean';
 export declare type PrimitiveType = number | boolean | string | null;
 export interface IJsonSchemaDefinition {
     $schema?: string;
@@ -13,7 +13,7 @@ export interface IJsonSchemaDefinition {
     [key: string]: any;
 }
 export interface IJsonSchemaArrayDefinition extends IJsonSchemaDefinition {
-    type: "array";
+    type: 'array';
     items?: IJsonSchemaDefinition;
     minItems?: number;
     maxItems?: number;
@@ -23,7 +23,7 @@ export interface IJsonSchemaArrayDefinition extends IJsonSchemaDefinition {
     };
 }
 export interface IJsonSchemaObjectDefinition extends IJsonSchemaDefinition {
-    type: "object";
+    type: 'object';
     propertyOrder?: string[];
     properties?: {
         [key: string]: IJsonSchemaDefinition;
@@ -37,7 +37,7 @@ export interface IJsonSchemaObjectDefinition extends IJsonSchemaDefinition {
     required?: string[];
 }
 export interface IJsonSchemaStringDefinition extends IJsonSchemaDefinition {
-    type: "string";
+    type: 'string';
     maxLength?: number;
     minLength?: number;
     pattern?: string;
@@ -45,7 +45,7 @@ export interface IJsonSchemaStringDefinition extends IJsonSchemaDefinition {
     examples?: PrimitiveType[] | object[];
 }
 export interface IJsonSchemaNumberDefinition extends IJsonSchemaDefinition {
-    type: "number";
+    type: 'number';
     multipleOf?: number;
     minimum?: number;
     maximum?: number;
@@ -54,6 +54,6 @@ export interface IJsonSchemaNumberDefinition extends IJsonSchemaDefinition {
     examples?: PrimitiveType[] | object[];
 }
 export interface IJsonSchemaBooleanDefinition extends IJsonSchemaDefinition {
-    type: "boolean";
+    type: 'boolean';
 }
 //# sourceMappingURL=json-schema-definition.d.ts.map

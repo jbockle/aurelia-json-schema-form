@@ -1,4 +1,4 @@
-import { ITemplateStore } from "../interfaces/template";
+import { ITemplateStore } from '../interfaces/template';
 export declare class Wrapper {
     static readonly containerMarker: string;
     static readonly emmetRegex: RegExp;

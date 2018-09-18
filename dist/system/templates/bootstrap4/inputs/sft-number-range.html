@@ -7,7 +7,7 @@
       <strong>${model === undefined ? "make a selection" : model}</strong>
     </label>
     <input type="range"
-           value.bind="model | number & validateOnChange"
+           value.bind="model | sfNumberValue & validateOnChange"
            class="form-control custom-range"
            id.one-time="id"
            placeholder.bind="form.$placeholder || ''"

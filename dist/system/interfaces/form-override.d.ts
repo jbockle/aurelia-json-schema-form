@@ -1,4 +1,4 @@
-import { IJsonSchemaDefinition } from "./json-schema-definition";
+import { IJsonSchemaDefinition } from './json-schema-definition';
 export interface IFormOverride {
     [key: string]: ORTypes;
     _element?: ITemplateElement[];

@@ -1,29 +1,15 @@
-System.register(["aurelia-framework", "../services/schema-form-configuration"], function (exports_1, context_1) {
+// import { FluentRuleCustomizer } from 'aurelia-validation';
+// import { SfBoolean } from '../form/boolean/sf-boolean';
+System.register([], function (exports_1, context_1) {
     "use strict";
-    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-        return c > 3 && r && Object.defineProperty(target, key, r), r;
-    };
-    var __metadata = (this && this.__metadata) || function (k, v) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-    };
-    var aurelia_framework_1, schema_form_configuration_1, BooleanRules;
+    var BooleanRules;
     var __moduleName = context_1 && context_1.id;
     return {
-        setters: [
-            function (aurelia_framework_1_1) {
-                aurelia_framework_1 = aurelia_framework_1_1;
-            },
-            function (schema_form_configuration_1_1) {
-                schema_form_configuration_1 = schema_form_configuration_1_1;
-            }
-        ],
-        execute: function () {
+        setters: [],
+        execute: function () {// import { FluentRuleCustomizer } from 'aurelia-validation';
+            // import { SfBoolean } from '../form/boolean/sf-boolean';
             BooleanRules = /** @class */ (function () {
-                function BooleanRules(configuration) {
-                    this.configuration = configuration;
+                function BooleanRules() {
                 }
                 BooleanRules.prototype.register = function () {
                     this.add();
@@ -31,13 +17,6 @@ System.register(["aurelia-framework", "../services/schema-form-configuration"], 
                 BooleanRules.prototype.add = function () {
                     // nothing specific to booleans
                 };
-                BooleanRules.prototype.bind = function (ctrl, rule) {
-                    // nothing specific to booleans
-                };
-                BooleanRules = __decorate([
-                    aurelia_framework_1.inject(schema_form_configuration_1.SchemaFormConfiguration),
-                    __metadata("design:paramtypes", [schema_form_configuration_1.SchemaFormConfiguration])
-                ], BooleanRules);
                 return BooleanRules;
             }());
             exports_1("BooleanRules", BooleanRules);
@@ -45,4 +24,4 @@ System.register(["aurelia-framework", "../services/schema-form-configuration"], 
     };
 });
 
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJ1bGVzL2Jvb2xlYW4tcnVsZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O2dCQVFFLHNCQUFvQixhQUFzQztvQkFBdEMsa0JBQWEsR0FBYixhQUFhLENBQXlCO2dCQUFJLENBQUM7Z0JBRS9ELCtCQUFRLEdBQVI7b0JBQ0UsSUFBSSxDQUFDLEdBQUcsRUFBRSxDQUFDO2dCQUNiLENBQUM7Z0JBRUQsMEJBQUcsR0FBSDtvQkFDRSwrQkFBK0I7Z0JBQ2pDLENBQUM7Z0JBRUQsMkJBQUksR0FBSixVQUFLLElBQWUsRUFBRSxJQUFtQztvQkFDdkQsK0JBQStCO2dCQUNqQyxDQUFDO2dCQWJVLFlBQVk7b0JBRHhCLDBCQUFNLENBQUMsbURBQXVCLENBQUM7cURBRUssbURBQXVCO21CQUQvQyxZQUFZLENBY3hCO2dCQUFELG1CQUFDO2FBZEQsQUFjQzs7UUFDRCxDQUFDIiwiZmlsZSI6InJ1bGVzL2Jvb2xlYW4tcnVsZXMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBWYWxpZGF0aW9uUnVsZXMsIEZsdWVudFJ1bGVDdXN0b21pemVyIH0gZnJvbSBcImF1cmVsaWEtdmFsaWRhdGlvblwiO1xyXG5pbXBvcnQgeyBpbmplY3QgfSBmcm9tIFwiYXVyZWxpYS1mcmFtZXdvcmtcIjtcclxuaW1wb3J0IHsgU2NoZW1hRm9ybUNvbmZpZ3VyYXRpb24gfSBmcm9tIFwiLi4vc2VydmljZXMvc2NoZW1hLWZvcm0tY29uZmlndXJhdGlvblwiO1xyXG5pbXBvcnQgeyBTZk51bWJlciB9IGZyb20gXCIuLi9mb3JtL251bWJlci9zZi1udW1iZXJcIjtcclxuaW1wb3J0IHsgU2ZCb29sZWFuIH0gZnJvbSBcIi4uL2Zvcm0vYm9vbGVhbi9zZi1ib29sZWFuXCI7XHJcblxyXG5AaW5qZWN0KFNjaGVtYUZvcm1Db25maWd1cmF0aW9uKVxyXG5leHBvcnQgY2xhc3MgQm9vbGVhblJ1bGVzIHtcclxuICBjb25zdHJ1Y3Rvcihwcml2YXRlIGNvbmZpZ3VyYXRpb246IFNjaGVtYUZvcm1Db25maWd1cmF0aW9uKSB7IH1cclxuXHJcbiAgcmVnaXN0ZXIoKSB7XHJcbiAgICB0aGlzLmFkZCgpO1xyXG4gIH1cclxuXHJcbiAgYWRkKCkge1xyXG4gICAgLy8gbm90aGluZyBzcGVjaWZpYyB0byBib29sZWFuc1xyXG4gIH1cclxuXHJcbiAgYmluZChjdHJsOiBTZkJvb2xlYW4sIHJ1bGU6IEZsdWVudFJ1bGVDdXN0b21pemVyPHt9LCBhbnk+KSB7XHJcbiAgICAvLyBub3RoaW5nIHNwZWNpZmljIHRvIGJvb2xlYW5zXHJcbiAgfVxyXG59XHJcbiJdLCJzb3VyY2VSb290Ijoic3JjL3BsdWdpbiJ9
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJ1bGVzL2Jvb2xlYW4tcnVsZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsNkRBQTZEO0FBQzdELDBEQUEwRDs7Ozs7Ozs4QkFEMUQsNkRBQTZEO1lBQzdELDBEQUEwRDtZQUUxRDtnQkFBQTtnQkFhQSxDQUFDO2dCQVhDLCtCQUFRLEdBQVI7b0JBQ0UsSUFBSSxDQUFDLEdBQUcsRUFBRSxDQUFDO2dCQUNiLENBQUM7Z0JBRUQsMEJBQUcsR0FBSDtvQkFDRSwrQkFBK0I7Z0JBQ2pDLENBQUM7Z0JBS0gsbUJBQUM7WUFBRCxDQWJBLEFBYUMsSUFBQTs7UUFDRCxDQUFDIiwiZmlsZSI6InJ1bGVzL2Jvb2xlYW4tcnVsZXMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBpbXBvcnQgeyBGbHVlbnRSdWxlQ3VzdG9taXplciB9IGZyb20gJ2F1cmVsaWEtdmFsaWRhdGlvbic7XG4vLyBpbXBvcnQgeyBTZkJvb2xlYW4gfSBmcm9tICcuLi9mb3JtL2Jvb2xlYW4vc2YtYm9vbGVhbic7XG5cbmV4cG9ydCBjbGFzcyBCb29sZWFuUnVsZXMge1xuXG4gIHJlZ2lzdGVyKCkge1xuICAgIHRoaXMuYWRkKCk7XG4gIH1cblxuICBhZGQoKSB7XG4gICAgLy8gbm90aGluZyBzcGVjaWZpYyB0byBib29sZWFuc1xuICB9XG5cbiAgLy8gYmluZChjdHJsOiBTZkJvb2xlYW4sIHJ1bGU6IEZsdWVudFJ1bGVDdXN0b21pemVyPHt9LCBhbnk+KSB7XG4gIC8vICAgLy8gbm90aGluZyBzcGVjaWZpYyB0byBib29sZWFuc1xuICAvLyB9XG59XG4iXSwic291cmNlUm9vdCI6InNyYy9wbHVnaW4ifQ==

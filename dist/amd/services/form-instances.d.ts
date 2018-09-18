@@ -1,5 +1,5 @@
-import { IFormInstance } from "../interfaces/form-instance";
-import { SchemaFormLogger } from "../resources/logger";
+import { IFormInstance } from '../interfaces/form-instance';
+import { SchemaFormLogger } from '../resources/logger';
 export declare class FormInstances {
     private logger;
     private instances;

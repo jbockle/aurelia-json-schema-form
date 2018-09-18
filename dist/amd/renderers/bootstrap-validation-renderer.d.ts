@@ -1,4 +1,4 @@
-import { RenderInstruction, ValidateResult, ValidationRenderer } from "aurelia-validation";
+import { RenderInstruction, ValidateResult, ValidationRenderer } from 'aurelia-validation';
 declare enum State {
     valid = "is-valid",
     invalid = "is-invalid"

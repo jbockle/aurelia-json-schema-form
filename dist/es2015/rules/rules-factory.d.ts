@@ -1,7 +1,7 @@
-import { StringRules } from "./string-rules";
-import { NumberRules } from "./number-rules";
-import { CommonRules } from "./common-rules";
-import { BooleanRules } from "./boolean-rules";
+import { StringRules } from './string-rules';
+import { NumberRules } from './number-rules';
+import { CommonRules } from './common-rules';
+import { BooleanRules } from './boolean-rules';
 export declare class RulesFactory {
     type: string;
     rules: any;
