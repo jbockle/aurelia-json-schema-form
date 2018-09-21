@@ -1,6 +1,7 @@
 # aurelia-json-schema-form
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm](https://img.shields.io/npm/v/aurelia-json-schema-form.svg)](https://www.npmjs.com/package/aurelia-json-schema-form)
 [![Build status](https://dev.azure.com/jbockle/Jbockle/_apis/build/status/aurelia-json-schema-form)](https://dev.azure.com/jbockle/Jbockle/_build/latest?definitionId=1)
-![npm](https://img.shields.io/npm/v/aurelia-json-schema-form.svg)
 
 Build aurelia forms based on JSON schema! All built-in templates are styled with bootstrap 4.1.1
 
