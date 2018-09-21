@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/jbockle/aurelia-json-schema-form"
   },
+  "scripts": {
+    "build": "au plugin"
+  },
   "license": "MIT",
   "dependencies": {
     "aurelia-animator-css": "^1.0.4",
