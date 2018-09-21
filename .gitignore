@@ -32,3 +32,4 @@ node_modules
 scripts
 test/coverage-jest
 dist-dev
+dist
