@@ -1,7 +1,7 @@
 {
   "name": "aurelia-json-schema-form",
   "description": "Create dynamic forms using json schema",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "keywords": [
     "json schema",
     "json-schema",
@@ -95,8 +95,8 @@
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.8"
   },
-  "main": "dist/commonjs/aurelia-json-schema-form.js",
-  "typings": "dist/commonjs/aurelia-json-schema-form.d.ts",
+  "main": "dist/commonjs/index.js",
+  "typings": "dist/commonjs/index.d.ts",
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
