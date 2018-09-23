@@ -23,7 +23,8 @@
       "kebab-case"
     ],
     "no-bitwise": false,
-    "arrow-parens": false
+    "arrow-parens": false,
+    "no-namespace": false
   },
   "linterOptions": {
     "exclude": [
