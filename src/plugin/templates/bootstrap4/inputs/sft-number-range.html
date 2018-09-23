@@ -7,14 +7,14 @@
       <strong>${model === undefined ? "make a selection" : model}</strong>
     </label>
     <input type="range"
-           value.bind="model | sfNumber & validateOnChange"
+           value.bind="model & validateOnChange"
            class="form-control custom-range"
            id.one-time="id"
-           placeholder.bind="form.$placeholder || ''"
            min.bind="minimum"
            max.bind="maximum"
            step.bind="form.$step"
-           readonly.bind="form.$schema.readOnly || form.$schema.const">
+           readonly.bind="form.$schema.readOnly || form.$schema.const"
+           >
     <small class="form-text text-muted"
            if.bind="form.$schema.description"
            textcontent.bind="form.$schema.description"></small>
