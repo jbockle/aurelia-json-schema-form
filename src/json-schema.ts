@@ -14,6 +14,10 @@ export const schema: IJsonSchemaDefinition = {
     description: {
       type: 'string'
     },
+    enumMap: {
+      type: 'string',
+      enum: ['a', 'b', 'c']
+    },
     hiddenPropertyWithDefault: {
       type: 'string',
       default: 'I\'m hidden but still populating the model!'

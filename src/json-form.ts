@@ -26,6 +26,10 @@ export const form: IFormOverride = {
       resize: 'vertical'
     }
   },
+  'enumMap': {
+    $enum: new Map([['letter a', 'a'], ['letter b', 'b'], ['letter c', 'c']]),
+    // $altTemplate: '../../templates/bootstrap4/inputs/sft-string-select-enum.html'
+  },
   'references': {
     $arrayAsTabs: true,
     $tabTitle: '${model[$index].name || \'Item \' + ($index + 1)}',

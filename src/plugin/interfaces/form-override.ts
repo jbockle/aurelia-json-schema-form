@@ -24,17 +24,20 @@ export interface IFormOverride {
   $noSeparator?: boolean;
   $step?: number; // range slider steps
   $parentForm?: IFormOverride;
-  $enum?: any;
+  /**
+   * @property create a custom mapping for enum display => value
+   */
+  $enum?: Map<string, ORPrimitive>;
   $onChange?: ORChangeCallback;
-  $canRemove?: ORBooleanCallBack;
-  $isReadOnly?: ORBooleanCallBack;
+  $canRemove?: ORBooleanCallback;
+  $isReadOnly?: ORBooleanCallback;
 }
 
 export declare type ORTypes =
   IFormOverride[] | IFormOverride | ORPrimitive | IJsonSchemaDefinition | ITemplateElement[] | ORChangeCallback |
-  ORBooleanCallBack | IORTextarea;
+  ORBooleanCallback | IORTextarea | Map<string, ORPrimitive>;
 export interface IORTextarea { rows?: number; resize?: 'none' | 'both' | 'horizontal' | 'vertical'; }
-export declare type ORBooleanCallBack = (model?: any) => boolean;
+export declare type ORBooleanCallback = (model?: any) => boolean;
 export declare type ORPrimitive = string | number | boolean;
 export declare type ORChangeCallback = (newValue, oldValue) => void;
 
@@ -55,7 +58,7 @@ export function setFormOverrides(
   schema.title = schema.title || (!!formKey ? fromCamelCase(formKey) : undefined);
   form.$schema = schema;
   if (form.$enum) {
-    form.$schema.enum = form.$enum;
+    form.$schema.enum = Array.from(form.$enum.values());
   }
 
   if (parentSchema && parentSchema.type === 'object') {

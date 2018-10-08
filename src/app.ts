@@ -34,6 +34,7 @@ export class App {
   };
 
   model: any = {
+    enumMap: 'c',
     foodAllergies: [
       'egg'
     ],
