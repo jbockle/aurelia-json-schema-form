@@ -4,7 +4,7 @@ import {
   IJsonSchemaDefinition,
   IFormOverride,
   AuJsonSchemaForm
-} from './plugin';
+} from './aurelia-json-schema-form';
 import { form } from './json-form';
 import { schema } from './json-schema';
 import { JSONHelper } from './json-helper';
@@ -14,9 +14,11 @@ export class App {
 
   schema: IJsonSchemaDefinition = schema;
 
-  @observable formString: string = JSONHelper.stringify(this.form, '\t');
+  @observable
+  formString: string = JSONHelper.stringify(this.form, '\t');
 
-  @observable schemaString: string = JSONHelper.stringify(this.schema, '\t');
+  @observable
+  schemaString: string = JSONHelper.stringify(this.schema, '\t');
 
   formVisible: boolean = true;
 
@@ -35,9 +37,7 @@ export class App {
 
   model: any = {
     enumMap: 'c',
-    foodAllergies: [
-      'egg'
-    ],
+    foodAllergies: ['egg'],
     averageDailyCoffeeConsumption: 1
   };
 
@@ -49,7 +49,9 @@ export class App {
   }
 
   formStringChanged(newValue, oldValue) {
-    if (!oldValue) { return; }
+    if (!oldValue) {
+      return;
+    }
     try {
       const obj = JSONHelper.parse(newValue);
       this.form = obj;
@@ -60,7 +62,9 @@ export class App {
   }
 
   schemaStringChanged(newValue, oldValue) {
-    if (!oldValue) { return; }
+    if (!oldValue) {
+      return;
+    }
     try {
       const obj = JSONHelper.parse(newValue);
       this.schema = obj;
@@ -81,7 +85,13 @@ export class App {
       window.alert('everything looks good!');
     } else {
       // tslint:disable-next-line:max-line-length
-      window.alert('one or more errors: \r\n' + results.results.filter((r) => !r.valid).map((r) => r.message).join('\r\n'));
+      window.alert(
+        'one or more errors: \r\n' +
+          results.results
+            .filter(r => !r.valid)
+            .map(r => r.message)
+            .join('\r\n')
+      );
     }
   }
 

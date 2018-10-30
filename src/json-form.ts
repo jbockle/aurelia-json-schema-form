@@ -1,4 +1,4 @@
-import { IFormOverride } from './plugin';
+import { IFormOverride } from './aurelia-json-schema-form';
 
 export const form: IFormOverride = {
   '@div.row': [
@@ -13,7 +13,7 @@ export const form: IFormOverride = {
       '@div.col': [
         {
           lastName: {
-            $isReadOnly: (item) => {
+            $isReadOnly: item => {
               return !item.firstName;
             }
           }
@@ -27,7 +27,7 @@ export const form: IFormOverride = {
     }
   },
   'enumMap': {
-    $enum: new Map([['letter a', 'a'], ['letter b', 'b'], ['letter c', 'c']]),
+    $enum: new Map([['letter a', 'a'], ['letter b', 'b'], ['letter c', 'c']])
     // $altTemplate: '../../templates/bootstrap4/inputs/sft-string-select-enum.html'
   },
   'references': {
@@ -38,7 +38,7 @@ export const form: IFormOverride = {
       name: {},
       relationship: {},
       email: {},
-      $canRemove: (item) => {
+      $canRemove: item => {
         return !item.relationship;
       },
       $noSeparator: true
@@ -95,9 +95,11 @@ export const form: IFormOverride = {
     ]
   },
   'termsOfService': {},
-  '_element': [{
-    elementName: 'random-number-generator',
-    schemaKey: 'random'
-  }],
+  '_element': [
+    {
+      elementName: 'random-number-generator',
+      schemaKey: 'random'
+    }
+  ],
   '$noSeparator': true
 };

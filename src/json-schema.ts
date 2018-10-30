@@ -1,4 +1,4 @@
-import { IJsonSchemaDefinition } from './plugin';
+import { IJsonSchemaDefinition } from './aurelia-json-schema-form';
 
 export const schema: IJsonSchemaDefinition = {
   type: 'object',
@@ -27,12 +27,7 @@ export const schema: IJsonSchemaDefinition = {
       minItems: 1,
       items: {
         type: 'string',
-        enum: [
-          'peanuts',
-          'shellfish',
-          'egg',
-          'milk'
-        ]
+        enum: ['peanuts', 'shellfish', 'egg', 'milk']
       }
     },
     averageDailyCoffeeConsumption: {
@@ -43,11 +38,7 @@ export const schema: IJsonSchemaDefinition = {
     },
     favoritePet: {
       type: 'string',
-      enum: [
-        'Dogs',
-        'Cats',
-        'Goldfish'
-      ]
+      enum: ['Dogs', 'Cats', 'Goldfish']
     },
     termsOfService: {
       type: 'boolean',
@@ -146,12 +137,7 @@ export const schema: IJsonSchemaDefinition = {
           const: 'United States of America'
         }
       },
-      required: [
-        'street',
-        'city',
-        'state',
-        'zip'
-      ]
+      required: ['street', 'city', 'state', 'zip']
     },
     references: {
       type: 'array',
@@ -170,11 +156,7 @@ export const schema: IJsonSchemaDefinition = {
             format: 'email'
           }
         },
-        required: [
-          'name',
-          'relationship',
-          'email'
-        ]
+        required: ['name', 'relationship', 'email']
       }
     },
     random: {

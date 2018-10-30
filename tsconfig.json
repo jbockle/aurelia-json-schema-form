@@ -10,19 +10,12 @@
     "sourceMap": true,
     "allowJs": false,
     "skipLibCheck": true,
-    "baseUrl": "src/plugin",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "baseUrl": "src",
+    "lib": ["es2017", "dom"],
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": [
-    "./src/**/*.ts",
-    "./test/**/*.ts",
-    "./custom_typings/**/*.d.ts"
-  ],
+  "include": ["./src/**/*.ts", "./test/**/*.ts", "./custom_typings/**/*.d.ts"],
   "atom": {
     "rewriteTsconfig": false
   }
