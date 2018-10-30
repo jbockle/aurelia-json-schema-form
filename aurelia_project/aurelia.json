@@ -13,7 +13,7 @@
     }
   },
   "plugin": {
-    "src": "src/plugin",
+    "src": "src/aurelia-json-schema-form",
     "output": "dist",
     "outputs": {
       "es2015": {
