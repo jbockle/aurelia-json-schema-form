@@ -7,7 +7,6 @@ import {
 
 @inject(SchemaFormLogger)
 export class DefaultsService {
-
   constructor(private logger: SchemaFormLogger) { }
 
   async getSchemaDefaultAsync(schema: IJsonSchemaDefinition, model: any) {
@@ -18,10 +17,19 @@ export class DefaultsService {
     switch (schema.type) {
       case 'array':
         model = await this.getArrayDefaultAsync(model);
+        break;
       case 'object':
-        model = await this.getObjectDefaultAsync(model, (schema as IJsonSchemaObjectDefinition));
+        model = await this.getObjectDefaultAsync(
+          model,
+          schema as IJsonSchemaObjectDefinition
+        );
+        break;
       default:
-        model = await this.getPrimitiveDefaultAsync(model, schema);
+        const val = await this.getPrimitiveDefaultAsync(model, schema);
+        if (val) {
+          model = val;
+        }
+        break;
     }
     return model;
   }
@@ -38,13 +46,19 @@ export class DefaultsService {
     return model || [];
   }
 
-  async getObjectDefaultAsync(model: object, schema: IJsonSchemaObjectDefinition) {
+  async getObjectDefaultAsync(
+    model: object,
+    schema: IJsonSchemaObjectDefinition
+  ) {
     this.logger.warn('getObjectModelDefaults', { model, schema });
     model = model || {};
     if (schema.properties) {
       // tslint:disable-next-line:forin
       for (const property in schema.properties) {
-        model[property] = await this.getSchemaDefaultAsync(schema.properties[property], model[property]);
+        model[property] = await this.getSchemaDefaultAsync(
+          schema.properties[property],
+          model[property]
+        );
       }
     }
     return model;
