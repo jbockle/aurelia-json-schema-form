@@ -72,7 +72,9 @@ export const form: IFormOverride = {
       {
         '@div.col': [
           {
-            state: {}
+            state: {
+              $isReadOnly: (model) => !!model.address.state
+            }
           }
         ]
       },

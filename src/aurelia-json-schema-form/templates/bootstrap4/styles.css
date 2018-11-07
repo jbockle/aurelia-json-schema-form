@@ -17,3 +17,7 @@ span.disabled {
   color: var(--gray) !important;
   cursor: not-allowed;
 }
+
+*:disabled, input:read-only {
+  cursor: not-allowed;
+}

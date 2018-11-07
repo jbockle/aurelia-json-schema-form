@@ -2,7 +2,7 @@
   <div class="form-group">
     <label for.one-time="id" class="col-form-label-sm" if.bind="!form.$noTitle">${form.$schema.title}</label>
     <select value.bind="model & validateOnChange" class="form-control form-control-sm"
-            id.one-time="id" disabled.bind="form.$schema.readOnly || form.$schema.const">
+            id.one-time="id" disabled.bind="(form.$schema.readOnly || form.$schema.const) | sfBooleanIsReadOnly:form:formCtrl.model & signal:'validationChanged'">
       <option model.bind="''">Select an option..</option>
       <enum-std if.bind="!form.$enum">
         <option repeat.for="item of form.$schema.enum" model.bind="item"

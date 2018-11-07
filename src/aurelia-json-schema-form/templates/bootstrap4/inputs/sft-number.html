@@ -1,16 +1,10 @@
 <template>
   <div class="form-group">
-    <label for.one-time="id"
-           class="col-form-label-sm"
-           if.bind="!form.$noTitle">${form.$schema.title}</label>
-    <input type="number"
-           value.bind="model | sfNumber & validateOnChange"
-           class="form-control form-control-sm"
-           id.one-time="id"
-           placeholder.bind="form.$placeholder || ''"
-           readonly.bind="(form.$schema.readOnly || form.$schema.const || form.$schema.$isReadOnly) | sfBooleanIsReadOnly:form:formCtrl.model  & signal:'validationChanged'">
-    <small class="form-text text-muted"
-           if.bind="form.$schema.description"
+    <label for.one-time="id" class="col-form-label-sm" if.bind="!form.$noTitle">${form.$schema.title}</label>
+    <input type="number" value.bind="model | sfNumber & validateOnChange" class="form-control form-control-sm"
+           id.one-time="id" placeholder.bind="form.$placeholder || ''"
+           readonly.bind="(form.$schema.readOnly || form.$schema.const) | sfBooleanIsReadOnly:form:formCtrl.model  & signal:'validationChanged'">
+    <small class="form-text text-muted" if.bind="form.$schema.description"
            textcontent.bind="form.$schema.description"></small>
     <div class="invalid-feedback"></div>
   </div>

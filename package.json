@@ -1,7 +1,7 @@
 {
   "name": "aurelia-json-schema-form",
   "description": "Create dynamic forms using json schema",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "keywords": [
     "json schema",
     "json-schema",

@@ -3,7 +3,8 @@
     <label for.one-time="id" class="col-form-label-sm" if.bind="!form.$noTitle">${form.$schema.title}</label>
     <textarea class="form-control" value.bind="model & validateOnChange:formCtrl.validationController"
               placeholder.bind="form.$placeholder || ''" rows.bind="form.$textarea.rows || 3"
-              css="resize: ${form.$textarea.resize ? form.$textarea.resize : 'none'}"></textarea>
+              css="resize: ${form.$textarea.resize ? form.$textarea.resize : 'none'}"
+              readonly.bind="(form.$schema.readOnly || form.$schema.const) | sfBooleanIsReadOnly:form:formCtrl.model & signal:'validationChanged'"></textarea>
     <small class="form-text text-muted" if.bind="form.$schema.description"
            textcontent.bind="form.$schema.description"></small>
     <div class="invalid-feedback"></div>
