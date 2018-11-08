@@ -62,6 +62,10 @@ export class SfArray {
     }
   }
 
+  unbind() {
+    this.unbindRules();
+  }
+
   async initializeArray() {
     if (
       this.form.$arrayItem.$schema.enum ||
@@ -115,6 +119,10 @@ export class SfArray {
     this.formCtrl.validationController.addObject(this.model);
   }
 
+  unbindRules() {
+    this.formCtrl.validationController.removeObject(this.model);
+  }
+
   async add(validate: boolean) {
     if (!this.isDisabled && !this.atCapacity) {
       const item = await this.defaultsService.getSchemaDefaultAsync(this.form.$schema.items, null);
@@ -143,7 +151,7 @@ export class SfArray {
   }
 
   get isDisabled(): boolean {
-    return this.form.$notRemovable || this.form.$schema.readOnly || !!this.form.$schema.const;
+    return this.form.$schema.readOnly || !!this.form.$schema.const;
   }
 
   get atCapacity(): boolean {

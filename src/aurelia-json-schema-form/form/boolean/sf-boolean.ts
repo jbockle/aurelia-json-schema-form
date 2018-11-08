@@ -1,3 +1,4 @@
+import { FormService } from '../../services/form-service';
 import { bindable, customElement, inject } from 'aurelia-framework';
 import { Guid } from '../../resources/guid';
 import { SchemaFormConfiguration } from '../../services/schema-form-configuration';
@@ -9,6 +10,7 @@ import { FormInstances } from '../../services/form-instances';
 import { IFormInstance } from '../../interfaces/form-instance';
 
 @inject(
+  FormService,
   SchemaFormConfiguration,
   RulesFactory,
   SchemaFormLogger,
@@ -35,6 +37,7 @@ export class SfBoolean {
   }
 
   constructor(
+    public formService: FormService,
     public configuration: SchemaFormConfiguration,
     public rules: RulesFactory,
     private logger: SchemaFormLogger,
