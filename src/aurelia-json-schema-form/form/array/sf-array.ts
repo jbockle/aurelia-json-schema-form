@@ -163,11 +163,6 @@ export class SfArray {
       ? this.model.length >= this.form.$schema.maxItems : false;
   }
 
-  get atMinimumCapacity(): boolean {
-    return Number.isInteger(this.form.$schema.minItems)
-      ? this.model.length === this.form.$schema.minItems : false;
-  }
-
   async validate() {
     const result = await this.formCtrl.validationController.validate({ object: this.model });
     this.logger.info('validated array', result);
