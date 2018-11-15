@@ -7,7 +7,7 @@
         <label class="form-check-label">
           <input class="form-check-input" name="form.$schema.title" type="radio"
                  id.one-time="id+$index" value.bind="item" checked.bind="model & validateOnChange:formCtrl.validationController"
-                 disabled="(form.$schema.readOnly || form.$schema.const) | sfBooleanIsReadOnly:form:formCtrl.model & signal:'validationChanged'">
+                 disabled.bind="(form.$schema.readOnly || form.$schema.const) | sfBooleanIsReadOnly:form:formCtrl.model & signal:'validationChanged'">
           ${item}
         </label>
       </div>
