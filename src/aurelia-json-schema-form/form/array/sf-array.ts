@@ -126,7 +126,9 @@ export class SfArray {
   async add(validate: boolean) {
     if (!this.isDisabled && !this.atCapacity) {
       const item = await this.defaultsService.getSchemaDefaultAsync(this.form.$schema.items, null);
+      this.unbindRules();
       const index = this.model.push(item) - 1;
+      this.bindRules();
       this.selectTab(index);
       if (validate) {
         await this.validate();
@@ -135,7 +137,9 @@ export class SfArray {
   }
 
   async remove(index: number, validate: boolean) {
+    this.unbindRules();
     this.model.splice(index, 1);
+    this.bindRules();
     this.selectTab(this.model.length - 1);
     if (validate) {
       await this.validate();
