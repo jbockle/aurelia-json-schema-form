@@ -149,6 +149,6 @@ export class FormService {
     if (child) {
       templates = templates[child];
     }
-    return templates[type].replace('./', '../../');
+    return templates[type].replace('./', '');
   }
 }

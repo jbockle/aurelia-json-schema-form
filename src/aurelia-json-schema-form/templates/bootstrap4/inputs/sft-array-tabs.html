@@ -25,7 +25,7 @@
     <div repeat.for="item of model" id="${'tab_' + id +'_'+$index}" role="tabpanel"
          class="tab-pane fade ${($index === 0 ? 'show active' : '') & oneTime}">
       <button type="button" class="close pb-1" bootstrap-tooltip data-placement="left"
-              title="remove" click.trigger="remove($index,true)" disabled.bind="(isDisabled || atMinimumCapacity) | sfArrayCanRemove:form.$arrayItem:item & signal:'validationChanged'"
+              title="remove" click.trigger="remove($index,true)" disabled.bind="isDisabled | sfArrayCanRemove:form.$arrayItem:item & signal:'validationChanged'"
               if.bind="!form.$notRemovable">
         <span>&times;</span>
       </button>
