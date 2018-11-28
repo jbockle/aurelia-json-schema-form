@@ -6,7 +6,7 @@
     </label>
     <input type="range" value.bind="model & validateOnChange" class="form-control custom-range"
            id.one-time="id" min.bind="minimum" max.bind="maximum" step.bind="form.$step"
-           readonly.bind="(form.$schema.readOnly || form.$schema.const) | sfBooleanIsReadOnly:form:formCtrl.model  & signal:'validationChanged'">
+           readonly.bind="(form.$schema.readOnly || form.$schema.const) | sfBooleanIsReadOnly:form:model  & signal:'validationChanged'">
     <small class="form-text text-muted" if.bind="form.$schema.description"
            textcontent.bind="form.$schema.description"></small>
     <div class="invalid-feedback"></div>
