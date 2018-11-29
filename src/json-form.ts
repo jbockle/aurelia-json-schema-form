@@ -26,6 +26,10 @@ export const form: IFormOverride = {
       resize: 'vertical'
     }
   },
+  'foodAllergies': {
+    $noSeparator: true,
+    $arrayItem: {}
+  },
   'enumMap': {
     $enum: new Map([['letter a', 'a'], ['letter b', 'b'], ['letter c', 'c']])
     // $altTemplate: '../../templates/bootstrap4/inputs/sft-string-select-enum.html'
@@ -38,6 +42,10 @@ export const form: IFormOverride = {
       name: {},
       relationship: {},
       email: {},
+      professionalOrganizations: {
+        $enum: new Map([['Jedi', 'one'], ['Sith', 'two'], ['Autobot', 'three'], ['Decepticon', 'four']]),
+        $arrayItem: {}
+      },
       $canRemove: item => {
         return !item.relationship;
       },
@@ -48,14 +56,14 @@ export const form: IFormOverride = {
     $noEmptyArrayInitialization: true,
     $arrayItem: {
       $required: true,
-      $noTitle: true
+      $noTitle: true,
+      $isReadOnly: (model) => {
+        return model === '555-867-5309';
+      }
     }
   },
   'favoritePet': {},
-  'foodAllergies': {
-    $noSeparator: true,
-    $arrayItem: {}
-  },
+
   'averageDailyCoffeeConsumption': {
     // $step: 2
   },
@@ -73,7 +81,9 @@ export const form: IFormOverride = {
         '@div.col': [
           {
             state: {
-              $isReadOnly: (model) => !!model.address.state
+              $isReadOnly: (model) => {
+                return !!model;
+              }
             }
           }
         ]

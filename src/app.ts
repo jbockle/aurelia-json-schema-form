@@ -36,9 +36,17 @@ export class App {
   };
 
   model: any = {
+    firstName: 'John',
+    lastName: 'Doe',
     enumMap: 'c',
     foodAllergies: ['egg'],
-    averageDailyCoffeeConsumption: 1
+    averageDailyCoffeeConsumption: 1,
+    address: {
+      street: '',
+      city: '',
+      state: 'New York',
+      zip: 14211
+    }
   };
 
   attached() {
@@ -87,10 +95,10 @@ export class App {
       // tslint:disable-next-line:max-line-length
       window.alert(
         'one or more errors: \r\n' +
-          results.results
-            .filter(r => !r.valid)
-            .map(r => r.message)
-            .join('\r\n')
+        results.results
+          .filter(r => !r.valid)
+          .map(r => r.message)
+          .join('\r\n')
       );
     }
   }
