@@ -12,8 +12,8 @@
     </enum-std>
     <enum-map else>
       <div class="form-check" repeat.for="[display,value] of form.$enum">
-        <input type="checkbox" id="${value+$index}" value.bind="form.$schema.enum[$index]" class="form-check-input"
-          checked.bind="model" change.trigger="validate()" />
+        <input type="checkbox" id="${value+$index}" value.bind="value" class="form-check-input" checked.bind="model"
+          change.trigger="validate()" />
         <label for="${value+$index}" class=" form-check-label">${display}</label>
       </div>
     </enum-map>
