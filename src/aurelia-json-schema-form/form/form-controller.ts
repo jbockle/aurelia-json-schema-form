@@ -24,7 +24,7 @@ export class FormController {
   }
 
   bind(bindingContext: object, overrideContext: object) {
-    this.logger.info('form-controller binded', { bindingContext, overrideContext });
+    this.logger.info('form-controller bound', { bindingContext, overrideContext });
   }
 
   attached() {

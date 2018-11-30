@@ -151,6 +151,19 @@ export const schema: IJsonSchemaDefinition = {
             type: 'string',
             default: 'manager'
           },
+          professionalOrganizations: {
+            type: 'array',
+            minItems: 1,
+            items: {
+              type: 'string',
+              enum: [
+                'one',
+                'two',
+                'three',
+                'four'
+              ],
+            }
+          },
           email: {
             type: 'string',
             format: 'email'

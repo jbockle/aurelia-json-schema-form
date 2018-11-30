@@ -37,7 +37,7 @@ export class SfArray {
 
   errors: ValidateResult[];
 
-  binded: boolean = false;
+  bound: boolean = false;
 
   private formCtrl: IFormInstance;
 
@@ -50,7 +50,7 @@ export class SfArray {
   ) { }
 
   async bind() {
-    if (!this.binded) {
+    if (!this.bound) {
       this.logger.info('sf-array', { form: this.form, model: this.model });
       this.formCtrl = this.formInstances.get(this.formInstance);
       this.bindRules();
@@ -58,7 +58,7 @@ export class SfArray {
       await this.createItemView();
       await this.determineViewStrategy();
       await this.initializeArray();
-      this.binded = true;
+      this.bound = true;
     }
   }
 
